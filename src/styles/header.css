@@ -1,0 +1,11 @@
+.conteiner-header {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.conteiner-header > img {
+    width: 125px;
+    height: 50.1px;
+}

@@ -1,0 +1,19 @@
+:root {
+    --background-color-fundo: #212529;
+    --background-color-fundo-inp-li: #343A40;
+    --background-color-btn: #4C6EF5;
+
+    --color-title-1: #DEE2E6;
+    --color-title-2: #CED4DA;
+
+    --font-family: 'IBM Plex Sans', sans-serif;
+
+    --font-weight: 500;
+    --font-size-title-1: 24px;
+    --line-height-title-1: 31px;
+
+    --font-size-title-2: 20px;
+    --font-height: 26px;
+
+    --border-radius: 8px;
+}

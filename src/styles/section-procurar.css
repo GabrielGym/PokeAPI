@@ -1,0 +1,38 @@
+.section-procurar-pokemon{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 300px;
+    margin-top: 50px;
+}
+
+.section-procurar-pokemon > form {
+    display: flex;
+
+    width: 100%;
+    gap: 10px;
+}
+
+.section-procurar-pokemon > form > input {
+    width: 80%;
+    padding: 15px 24px;
+
+    background-color: var(--background-color-fundo-inp-li);
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.button-pesquisar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--background-color-btn);
+    border: none;
+    border-radius: var(--border-radius);
+
+    width: 72px;
+    height: 52px;
+}
