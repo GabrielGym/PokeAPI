@@ -1,9 +1,9 @@
-/* Monte a lógica das requisições aqui */
-// requests.js
-/* 
+
+
+
 async function consomePokeAPI() {
     // Seleciona o elemento que representa o loading da requisição
-    const loading = document.querySelector('#loading')
+    const loading = document.querySelector('.conteiner-pokemons')
 
     // Faz a requisição na API
     const pokemonsDaAPI = await fetch('https://pokeapi.co/api/v2/pokemon')
@@ -24,4 +24,3 @@ async function consomePokeAPI() {
 }
 
 // Chama a função para rodá-la ao carregar a página
-consomePokeAPI() */

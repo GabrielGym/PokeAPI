@@ -10,20 +10,21 @@ function renderSectionLista(){
     const conteinerUl = document.createElement("ul");
     conteinerUl.classList.add("conteiner-pokemons");
 
-    const tagLi = document.createElement("li");
-    tagLi.classList.add("lista-pokemon");
-
-    const tagImg = document.createElement("img");
-    tagImg.src = ``
-    tagImg.alt = ``
-    tagImg.classList.add("img-pokemon");
-
-    const tagH2 = document.createElement("h2");
-    tagH2.classList.add("nome-pokemon");
-    tagH2.innerText = `Magikarp`;
-
-    tagLi.append(tagImg, tagH2);
-    conteinerUl.append(tagLi);
     sectionLista.append(title1, conteinerUl);
     conteiner.append(sectionLista);
+}
+async function renderizaPokemons() {
+    const ulTag = document.querySelector('.conteiner-pokemons')
+    const listaDePokemons = await consomePokeAPI()
+
+    listaDePokemons.results.forEach(pokemon => {
+        const numeroNaPokedex = pokemon.url.slice(34, -1)
+
+        ulTag.insertAdjacentHTML('beforeend', `
+            <li class="lista-pokemon">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${numeroNaPokedex}.png" alt=${pokemon.name} class="img-pokemon">
+                <h2 class="nome-pokemon">${pokemon.name}</h2>
+            </li>
+        `)
+    })
 }

@@ -27,13 +27,20 @@
 
 .lista-pokemon{
     display: flex;
+    align-items: center;
 
     max-width: 100%;
     padding: 15px 24px;
+    gap: 50px;
 
     background-color: var(--background-color-fundo-inp-li);
     border: none;
     border-radius: var(--border-radius);
+}
+
+.img-pokemon{
+    width: 60px;
+    height: 60px;
 }
 
 .nome-pokemon{
