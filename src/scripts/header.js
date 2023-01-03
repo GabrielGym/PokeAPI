@@ -1,4 +1,6 @@
-function renderHeader() {
+function renderizarHeader() {
+    const divisao = document.querySelector(".divisao-pesquisa");
+
     const header = document.createElement("header");
     header.classList.add("conteiner-header");
 
@@ -6,7 +8,8 @@ function renderHeader() {
     imgHeader.src = `./src/assets/pokeapi.png`;
     imgHeader.alt = `PokéApi`;
 
-    header.append(imgHeader)
-    divisao.append(header)
-}
+    header.append(imgHeader);
+    divisao.append(header);
+};
 
+export { renderizarHeader };
