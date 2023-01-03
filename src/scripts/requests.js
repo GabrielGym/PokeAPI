@@ -28,15 +28,37 @@ async function puxandoPokemonPorNome(nomePokemon) {
   return pokemon;
 };
 
+function renderizaCarregando() {
+  const ulTag = document.querySelector('.conteiner-pokemons');
+
+  ulTag.insertAdjacentHTML('beforeend', `
+  <li class="carregandoLi"><h1 class="carregando">Carregando...</h1></li>
+  `)
+
+  return ulTag
+}
+
 function renderizarPesquisa() {
   const title = document.querySelector(".title-1");
   const input = document.querySelector("input");
   const btnPesquisar = document.querySelector(".button-pesquisar");
+  const ulTag = document.querySelector('.conteiner-pokemons');
 
   btnPesquisar.addEventListener('click', () => {
-    puxandoPokemonPorNome(input.value);
-    title.innerText = `Voltar ao inicio`;
+
+    ulTag.innerHTML = ''
+    renderizaCarregando()
+
+    setTimeout(() => {
+      ulTag.innerHTML = ''
+    }, 1490)
+
+    setTimeout(() => {
+      puxandoPokemonPorNome(input.value);
+      title.innerText = `Voltar ao inicio`;
+    }, 1500);
+
   });
 };
 
-export { puxandoPokemons, renderizarPesquisa };
+export { puxandoPokemons, renderizarPesquisa, renderizaCarregando };

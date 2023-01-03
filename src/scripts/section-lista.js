@@ -1,4 +1,4 @@
-import { puxandoPokemons } from "./requests.js";
+import { puxandoPokemons, renderizaCarregando } from "./requests.js";
 
 function renderizarSecaoLista() {
     const conteiner = document.querySelector(".conteiner");
@@ -50,10 +50,21 @@ async function renderizaPokemon(array) {
 async function VoltarARenderizarPokemons() {
     const btnVoltar = document.querySelector(".title-1");
     const renderizar = await puxandoPokemons();
+    const ulTag = document.querySelector('.conteiner-pokemons');
 
     btnVoltar.addEventListener('click', () => {
-        btnVoltar.innerText = `Lista de Pokémons`;
-        renderizaPokemons(renderizar);
+        ulTag.innerHTML = ''
+        renderizaCarregando()
+
+        setTimeout(() => {
+            ulTag.innerHTML = ''
+        }, 1490);
+
+        setTimeout(() => {
+            btnVoltar.innerText = `Lista de Pokémons`;
+            renderizaPokemons(renderizar);
+        }, 1500);
+
     });
 };
 

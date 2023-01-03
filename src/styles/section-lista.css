@@ -23,6 +23,8 @@
     display: flex;
     flex-direction: column;
 
+    list-style: none;
+
     width: 100%;
     margin-top: 50px;
     gap: 25px;
@@ -39,6 +41,7 @@
     background-color: var(--background-color-fundo-inp-li);
     border: none;
     border-radius: var(--border-radius);
+    list-style: none;
 }
 
 .img-pokemon{
@@ -52,4 +55,21 @@
     line-height: var(--line-height-title-2);
 
     color: var(--color-title-2);
+}
+
+.carregando{
+    font-size: var(--font-size-title-2);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height-title-2);
+
+    color: #ADB5BD;
+}
+
+.carregandoLi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 100%;
+    margin-top: 100px;
 }
