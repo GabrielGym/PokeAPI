@@ -1,13 +1,20 @@
 import { renderizaPokemons, renderizaPokemon } from "./section-lista.js";
 
 async function puxandoPokemons() {
+  const ulTag = document.querySelector('.conteiner-pokemons');
 
   const pokemonsDaAPI = await fetch('https://pokeapi.co/api/v2/pokemon')
     .then(
       res => res.json()
     )
     .then(res => {
-      renderizaPokemons(res)
+      ulTag.innerHTML = ''
+      renderizaCarregando()
+      setTimeout(() => {
+        ulTag.innerHTML = ''
+        renderizaPokemons(res)
+      }, 1000)
+
       return res
     })
     .catch(
